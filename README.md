@@ -38,7 +38,7 @@ npm run check
 npm run test:public
 ```
 
-The checks cover JavaScript syntax, local asset references, private credential patterns, cover rendering safeguards, and anonymous database access. Browser rich-text checks and transaction-only SQL permission tests are included under [database/](database/).
+The checks cover JavaScript syntax, local asset references, private credential patterns, cover rendering safeguards, and anonymous database access. See the [release verification record](docs/VALIDATION.md) for the deployed smoke-test results. Browser rich-text checks and transaction-only SQL permission tests are included under [database/](database/).
 
 ## Deploy
 
