@@ -1,0 +1,13 @@
+{
+  "name": "functional-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Sathwik Tadivaka's portfolio with a Supabase content studio, project mockup editor, and rich blog drafts.",
+  "scripts": {
+    "start": "node serve.mjs",
+    "check": "node scripts/check.mjs",
+    "test:public": "node database/verify-public.mjs",
+    "deploy": "firebase deploy --only hosting --project portfolio-0129"
+  },
+  "engines": { "node": ">=20" }
+}

@@ -1,0 +1,12 @@
+<!doctype html><html><head><meta charset="UTF-8"></head><body><h1>Blog format checks</h1><pre id="results"></pre><script>window.PortfolioCMS={escape:v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))};</script><script src="/blog-content.js"></script><script>
+const results=[];const test=(name,fn)=>{try{if(!fn())throw Error('assertion failed');results.push('PASS '+name)}catch(e){results.push('FAIL '+name+': '+e.message)}};
+test('Unsafe HTML and event handlers removed',()=>{const out=BlogContent.sanitize('<script>alert(1)</'+'script><img src="https://example.com/a.png" onerror="alert(2)"><svg onload="alert(3)"></svg>');return !/script|onerror|svg|onload/.test(out)});
+test('Unsafe URL schemes removed',()=>{const out=BlogContent.sanitize('<a href="javascript:alert(1)">link</a><img src="data:image/png;base64,AAA">');return !/javascript|data:|img/.test(out)});
+test('Font family is stripped, typography preserved',()=>{const out=BlogContent.sanitize('<font face="Comic Sans MS" size="5" color="#705781"><b>Bold</b> <i>Italic</i></font>');return !/Comic|face=|font-family/.test(out)&&out.includes('1.5em')&&out.includes('<b>Bold</b>')&&out.includes('<i>Italic</i>')});
+test('Editor alignment and safe colors survive',()=>{const out=BlogContent.sanitize('<p style="text-align:center;color:rgb(112, 87, 129);position:fixed">hello</p>');return out.includes('text-align: center')&&out.includes('rgb(112, 87, 129)')&&!out.includes('position')});
+test('Inline image widths and captions survive',()=>{const out=BlogContent.sanitize('<figure><img src="/assets/news-web.jpg" data-width="65" alt="News"><figcaption>A caption</figcaption></figure>');return out.includes('data-width="65"')&&out.includes('<figcaption>A caption</figcaption>')});
+test('Sanitizing twice preserves output',()=>{const html=BlogContent.sanitize('<h2>Title</h2><p><strong>Hello</strong> <span style="font-size: 1.5em">there</span></p>');return BlogContent.sanitize(html)===html});
+test('Legacy paragraphs safely rendered',()=>{const html=BlogContent.legacy('First <script>\n\nSecond');return html==='<p>First &lt;script&gt;</p><p>Second</p>'});
+test('Excerpt retains words with paragraph separation',()=>BlogContent.text('<p>First</p><p>Second</p>')==='First\nSecond');
+document.querySelector('#results').textContent=results.join('\n');document.title=results.some(r=>r.startsWith('FAIL'))?'FAILED':'All blog format checks passed';
+</script></body></html>
