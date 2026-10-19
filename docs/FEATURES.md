@@ -10,7 +10,7 @@ This is Sathwik Tadivaka's software portfolio and a working example of a databas
 | Projects | See selected work, tags, mockups, project stories, screenshots, repository links, and demo links. Open project details with keyboard-accessible dialogs. |
 | About | View one portrait, education, background, and professional experience. |
 | Research | Read clearly labeled interests in AI intelligence, machine learning, and connected systems. These are explorations, not claimed publications. |
-| Resume | Download the supplied Word resume. |
+| Resume | Read all four pages of the updated PDF at /resume/ before downloading the original file. |
 | Connect | Open LinkedIn, GitHub, Instagram, or an email link; copy the contact email. |
 | Blog | Browse published posts and read formatted articles. Blog navigation and content visibility follow the administrator's setting. |
 

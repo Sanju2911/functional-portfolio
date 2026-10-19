@@ -60,7 +60,7 @@ For a separate, empty Supabase project only: run `database/schema.sql`, then opt
 ## Content updates
 
 - Use `/admin/` for projects, covers, galleries, portrait settings, blogs, drafts, and blog visibility.
-- Replace `dist/assets/Sathwik-Tadivaka-Resume.docx` and redeploy to update the resume.
+- Replace `dist/assets/Sathwik-Tadivaka-Resume.pdf` and redeploy to update the resume.
 - Edit source for base portfolio copy, experience, research, social links, and the contact address.
 - Keep image source files modest; uploads are resized and converted to WebP by the studio.
 
@@ -69,3 +69,7 @@ For a separate, empty Supabase project only: run `database/schema.sql`, then opt
 Repository: `Sanju2911/functional-portfolio`. The GitHub release contains current website source, Firebase configuration, schema/migrations, tests, and documentation. It excludes the previous Sites identity, Git internals, credential stores, local environment files, generated archives, and historical destructive reset scripts.
 
 Publishing source does not copy private CMS content or Auth users into GitHub. The resume and project screenshots under `dist/assets/` are intentionally part of the public website and source release.
+
+## Resume preview updates
+
+The current supplied PDF is served unchanged at `dist/assets/Sathwik-Tadivaka-Resume.pdf`. `/resume/` previews every page as a high-resolution WebP, includes accessible extracted text, and offers the original PDF for viewing and download. After replacing the PDF, regenerate all `resume-page-N.webp` assets and the preview HTML/text so they stay in sync. The homepage links lead to the preview, not an automatic download.

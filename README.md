@@ -10,7 +10,7 @@ A responsive portfolio for **Sathwik Tadivaka**, with pastel project mockups, a 
 
 ## Features
 
-- Responsive software portfolio with original CSS/SVG illustrations, project detail dialogs, research interests, experience, resume download, and social links.
+- Responsive software portfolio with original CSS/SVG illustrations, project detail dialogs, research interests, experience, resume preview/download, and social links.
 - Protected administrator sign-in with Supabase Auth and database row-level security.
 - Project editing, ordering, drafts, publishing, archives, covers, and screenshot galleries.
 - Five editable cover templates: **Smartwatch, Browser, Terminal, Travel browser, and Phone**. Adjust frame position, size, tilt, shadow, corners, screenshot zoom/crop/fit, cover text, and pastel colors with a live preview.
@@ -60,6 +60,7 @@ Follow the [deployment and maintenance guide](docs/DEPLOYMENT.md), including Sup
 | dist/project-covers.* | Shared project mockup renderer |
 | dist/admin/ | Authenticated content studio and editors |
 | dist/blogs/ | Public blog index and article reader |
+| dist/resume/ | Four-page PDF preview, accessible text, and download |
 | dist/blog-content.* | Shared safe rich-text format and typography |
 | dist/cms-client.js | Public Supabase client configuration |
 | dist/assets/ | Portfolio screenshots, icon, and downloadable resume |
@@ -74,6 +75,6 @@ The Supabase URL and publishable key in the browser client are public identifier
 
 Projects, portrait settings, and blog content can be maintained in /admin/ without redeployment. Base portfolio copy, experience, research, social links, and the resume remain source-managed. Device-only draft backups are scoped to their browser and domain; wait for cloud draft sync before switching hosts.
 
-Project screenshots originate from the owner's GitHub work. Demo/sample state and project limitations are described in the portfolio. Research is labeled as exploration rather than published findings. The downloadable Word resume is intentionally part of the public site.
+Project screenshots originate from the owner's GitHub work. Demo/sample state and project limitations are described in the portfolio. Research is labeled as exploration rather than published findings. The downloadable PDF resume is intentionally part of the public site.
 
 Built with HTML, CSS, JavaScript, Firebase Hosting, and Supabase. DM Sans and Manrope supply the site typography, with system fallbacks. Third-party library license information is in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).

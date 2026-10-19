@@ -33,4 +33,3 @@ if('IntersectionObserver' in window){
   const sectionObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){document.querySelectorAll('.header nav a').forEach(link=>{if(link.hash===`#${entry.target.id}`)link.setAttribute('aria-current','location');else link.removeAttribute('aria-current')})}}),{rootMargin:'-15% 0px -55% 0px',threshold:0});
   document.querySelectorAll('main>section[id]').forEach(section=>sectionObserver.observe(section));
 }
-document.querySelectorAll('.resume-link').forEach(link=>link.addEventListener('click',()=>{const toast=document.querySelector('.toast');toast.textContent='Your résumé download is starting.';toast.classList.add('visible');setTimeout(()=>toast.classList.remove('visible'),2500)}));

@@ -25,3 +25,7 @@ The Firebase migration smoke test inspected editors without changing portfolio c
 The custom domain uses Cloudflare email protection, which can rewrite email links in delivered homepage HTML. That transformation explains why the homepage's delivered bytes differ from the source; the checked admin scripts, admin/blog HTML, and resume match the release files.
 
 The local GitHub checkout is `functional-portfolio`. Its `dist/` directory matches the files prepared for Firebase deployment. Private CMS records, authentication users, browser drafts, and credential stores are not exported to GitHub.
+
+## Resume update — 19 October 2026
+
+The Word download was replaced with the supplied four-page PDF. All homepage resume links now open `/resume/` before downloading. All four page previews were visually checked, the page navigation works, a 390-pixel mobile layout has no horizontal overflow, and accessible text is included. The download serves the original PDF without modifying its contents. The former DOCX is no longer part of the current release. Source checks now resolve 70 local HTML references.
