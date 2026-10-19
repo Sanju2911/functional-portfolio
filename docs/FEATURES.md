@@ -90,3 +90,9 @@ No visitor tracking or contact form backend is included. The rich editor uses br
 ### Blog writing canvas
 
 ![Rich writing canvas with inline images and private draft saving](images/blog-writing-room.jpg)
+
+### Featured freelance project: PJTSAU
+
+The first project card highlights the mobile and web crop diagnostics collaboration, identifying Sathwik’s Full Stack Development role and the August 2024–January 2025 project period. `/pjtsau/` provides an accessible project summary, a high-resolution certificate preview, and links to open or download the unchanged original PDF. Project text, order, and cover settings remain editable through the studio.
+
+`database/pjtsau-project.sql` adds only this project (id `pjtsau`); existing projects and settings are preserved. The mint cover displays the completion certificate rather than an invented app screenshot.

@@ -29,3 +29,11 @@ The local GitHub checkout is `functional-portfolio`. Its `dist/` directory match
 ## Resume update — 19 October 2026
 
 The Word download was replaced with the supplied four-page PDF. All homepage resume links now open `/resume/` before downloading. All four page previews were visually checked, the page navigation works, a 390-pixel mobile layout has no horizontal overflow, and accessible text is included. The download serves the original PDF without modifying its contents. The former DOCX is no longer part of the current release. Source checks now resolve 70 local HTML references.
+
+## PJTSAU project addition — 19 October 2026
+
+- Inspected the supplied one-page scanned university completion certificate.
+- Added only project `pjtsau` to the CMS, published first with sort order -1; four existing projects preserved.
+- Source checks and anonymous RLS checks passed.
+- `/pjtsau` resolves to the live reader; original PDF returns application/pdf and matches the supplied file byte for byte (1,986,849 bytes).
+- Live homepage card, project dialog, certificate links, and 390px layout inspected; certificate loaded with no horizontal overflow.
