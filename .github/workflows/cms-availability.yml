@@ -1,0 +1,33 @@
+name: Portfolio CMS availability
+
+on:
+  schedule:
+    - cron: "47 1,9,17 * * *"
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Check that published project data can be read
+        env:
+          SUPABASE_URL: https://wgyxeqpnitgxhytvmztg.supabase.co
+          SUPABASE_PUBLISHABLE_KEY: sb_publishable_AP0rclySB_yLJrl9-eb_9A_pWLQ1z9q
+        run: |
+          node --input-type=module <<'NODE'
+          const endpoint = new URL('/rest/v1/portfolio_projects', process.env.SUPABASE_URL);
+          endpoint.search = 'select=id&published=eq.true&archived=eq.false&limit=1';
+          const response = await fetch(endpoint, {
+            headers: { apikey: process.env.SUPABASE_PUBLISHABLE_KEY, 'Cache-Control': 'no-cache' },
+            signal: AbortSignal.timeout(20000),
+          });
+          if (!response.ok) throw new Error('Portfolio CMS returned HTTP ' + response.status);
+          const rows = await response.json();
+          if (!Array.isArray(rows) || rows.length !== 1 || typeof rows[0].id !== 'string') {
+            throw new Error('No published project was returned');
+          }
+          console.log('Portfolio CMS public projects are readable.');
+          NODE
