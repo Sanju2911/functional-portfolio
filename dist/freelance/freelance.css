@@ -1,0 +1,18 @@
+.freelance{padding-top:clamp(32px,6vw,85px);padding-bottom:64px}
+.freelance h1,.freelance h2,.freelance h3{font-family:Manrope,sans-serif;font-weight:600;line-height:1.12;letter-spacing:-.045em}
+.freelance h1{font-size:clamp(42px,6vw,82px);margin:12px 0 20px}
+.freelance h2{font-size:clamp(30px,4vw,48px);margin:12px 0 20px}
+.freelance h3{font-size:24px;margin:12px 0}
+.freelance p{line-height:1.65;color:var(--muted);max-width:65ch;margin-bottom:20px}
+.freelance-hero{display:grid;grid-template-columns:1.4fr 1fr;align-items:stretch;gap:clamp(24px,6vw,80px)}
+.freelance-hero aside{display:flex;flex-direction:column;justify-content:space-between;align-items:flex-start;min-height:240px;padding:clamp(24px,4vw,50px);border-radius:24px;background:#dce8d8;color:#344133}
+.freelance-hero aside>span{font-size:48px;color:#597253}
+.freelance-hero aside p{font:500 clamp(26px,3.5vw,46px)/1.12 Manrope,sans-serif;letter-spacing:-.05em;color:inherit;margin:18px 0}
+.freelance-hero aside small{font-size:11px;letter-spacing:.08em}
+.freelance-actions{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.freelance-services,.freelance-case,.freelance-end{margin-top:clamp(48px,8vw,100px)}
+.freelance-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.freelance-grid article,.freelance-case{padding:clamp(20px,3vw,34px);border-radius:18px;background:#eee6f5}
+.freelance-grid article:nth-child(2){background:#e5eddf}.freelance-grid article:nth-child(3){background:#f6e4d7}.freelance-case{background:#f1eee5}
+.freelance-grid p{margin-bottom:0}
+@media(max-width:760px){.freelance-hero,.freelance-grid{grid-template-columns:1fr}.freelance-hero aside{min-height:180px}}
